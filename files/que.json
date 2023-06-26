@@ -1,0 +1,282 @@
+[
+    {
+        "id": 1,
+        "updatedAt": "2023-06-26T14:50:00.997Z",
+        "name": "Archipel",
+        "queueLength": "-",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 2,
+        "updatedAt": "2023-06-26T14:50:01.010Z",
+        "name": "Baron 1898",
+        "queueLength": "60",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 3,
+        "updatedAt": "2023-06-26T14:50:01.019Z",
+        "name": "Baron 1898 Single-rider",
+        "queueLength": "50",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 4,
+        "updatedAt": "2023-06-26T14:50:01.025Z",
+        "name": "Carnaval Festival",
+        "queueLength": "10",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 5,
+        "updatedAt": "2023-06-26T14:50:01.031Z",
+        "name": "Anton Pieck Plein (carrousels)",
+        "queueLength": "0",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 6,
+        "updatedAt": "2023-06-26T14:50:01.047Z",
+        "name": "De Vliegende Hollander",
+        "queueLength": "40",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 7,
+        "updatedAt": "2023-06-26T14:50:01.059Z",
+        "name": "De Vliegende Hollander Single-rider",
+        "queueLength": "35",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 8,
+        "updatedAt": "2023-06-26T14:50:01.066Z",
+        "name": "De zes Zwanen Rondvaart",
+        "queueLength": "0",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 9,
+        "updatedAt": "2023-06-26T14:50:01.075Z",
+        "name": "Diorama",
+        "queueLength": "0",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 10,
+        "updatedAt": "2023-06-26T14:50:01.080Z",
+        "name": "De Oude Tufferbaan",
+        "queueLength": "25",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 11,
+        "updatedAt": "2023-06-26T14:50:01.084Z",
+        "name": "Droomvlucht",
+        "queueLength": "40",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 12,
+        "updatedAt": "2023-06-26T14:50:01.103Z",
+        "name": "Efteling Museum",
+        "queueLength": "-",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 13,
+        "updatedAt": "2023-06-26T14:50:01.114Z",
+        "name": "Fabula",
+        "queueLength": "10",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 14,
+        "updatedAt": "2023-06-26T14:50:01.119Z",
+        "name": "Fata Morgana",
+        "queueLength": "20",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 15,
+        "updatedAt": "2023-06-26T14:50:01.127Z",
+        "name": "Gondoletta",
+        "queueLength": "-",
+        "specialQueueStatus": "Storing"
+    },
+    {
+        "id": 16,
+        "updatedAt": "2023-06-26T14:50:01.144Z",
+        "name": "Halve Maen",
+        "queueLength": "-",
+        "specialQueueStatus": "Onderhoud"
+    },
+    {
+        "id": 17,
+        "updatedAt": "2023-06-26T14:50:01.152Z",
+        "name": "Joris en de Draak",
+        "queueLength": "-",
+        "specialQueueStatus": "Storing"
+    },
+    {
+        "id": 18,
+        "updatedAt": "2023-06-26T14:50:01.166Z",
+        "name": "Joris en de Draak Single-rider",
+        "queueLength": "-",
+        "specialQueueStatus": "Gesloten"
+    },
+    {
+        "id": 19,
+        "updatedAt": "2023-06-26T14:50:01.186Z",
+        "name": "Kinderspoor",
+        "queueLength": "10",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 20,
+        "updatedAt": "2023-06-26T14:50:01.198Z",
+        "name": "Kindervreugd",
+        "queueLength": "0",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 21,
+        "updatedAt": "2023-06-26T14:50:01.212Z",
+        "name": "Kleuterhof",
+        "queueLength": "-",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 22,
+        "updatedAt": "2023-06-26T14:50:01.220Z",
+        "name": "Max & Moritz",
+        "queueLength": "25",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 23,
+        "updatedAt": "2023-06-26T14:50:01.232Z",
+        "name": "Max & Moritz Single-rider",
+        "queueLength": "-",
+        "specialQueueStatus": "Gesloten"
+    },
+    {
+        "id": 24,
+        "updatedAt": "2023-06-26T14:50:01.243Z",
+        "name": "Pagode",
+        "queueLength": "5",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 25,
+        "updatedAt": "2023-06-26T14:50:01.260Z",
+        "name": "Piraña",
+        "queueLength": "45",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 26,
+        "updatedAt": "2023-06-26T14:50:01.267Z",
+        "name": "Python",
+        "queueLength": "35",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 27,
+        "updatedAt": "2023-06-26T14:50:01.275Z",
+        "name": "Python Single-rider",
+        "queueLength": "35",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 28,
+        "updatedAt": "2023-06-26T14:50:01.281Z",
+        "name": "Sirocco",
+        "queueLength": "10",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 29,
+        "updatedAt": "2023-06-26T14:50:01.291Z",
+        "name": "Speelbos Nest",
+        "queueLength": "0",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 30,
+        "updatedAt": "2023-06-26T14:50:01.304Z",
+        "name": "Sprookjesbos",
+        "queueLength": "0",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 31,
+        "updatedAt": "2023-06-26T14:50:01.311Z",
+        "name": "Stoomcarrousel",
+        "queueLength": "-",
+        "specialQueueStatus": "Onderhoud"
+    },
+    {
+        "id": 32,
+        "updatedAt": "2023-06-26T14:50:01.322Z",
+        "name": "Stoomtrein Marerijk",
+        "queueLength": "25",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 33,
+        "updatedAt": "2023-06-26T14:50:01.334Z",
+        "name": "Stoomtrein Ruigrijk",
+        "queueLength": "25",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 34,
+        "updatedAt": "2023-06-26T14:50:01.350Z",
+        "name": "Symbolica",
+        "queueLength": "40",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 35,
+        "updatedAt": "2023-06-26T14:50:01.358Z",
+        "name": "Symbolica Single-rider",
+        "queueLength": "25",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 36,
+        "updatedAt": "2023-06-26T14:50:01.369Z",
+        "name": "Villa Volta",
+        "queueLength": "5",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 37,
+        "updatedAt": "2023-06-26T14:50:01.379Z",
+        "name": "Virtuele Droomvlucht",
+        "queueLength": "-",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 38,
+        "updatedAt": "2023-06-26T14:50:01.392Z",
+        "name": "Vogel Rok",
+        "queueLength": "30",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 39,
+        "updatedAt": "2023-06-26T14:50:01.399Z",
+        "name": "Volk van Laaf",
+        "queueLength": "0",
+        "specialQueueStatus": "Open"
+    },
+    {
+        "id": 40,
+        "updatedAt": "2023-06-26T14:50:01.412Z",
+        "name": "Volk van Laaf (Monorail)",
+        "queueLength": "5",
+        "specialQueueStatus": "Open"
+    }
+]

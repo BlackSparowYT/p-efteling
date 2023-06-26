@@ -1,0 +1,114 @@
+:root {
+    --green: green;
+    --darkgreen: darkgreen;
+    --gold: #ede5d5;
+    --red: #dd1616;
+    --orange: #f09c00;
+    --yellow: #d3e200;
+
+    --black: #000;
+    --white1: #ffffff;
+    --white2: #fafaf7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {font-family: "VernerW00-Regular"; src: url("./fonts/Verner\ W00\ Regular.otf") format("woff"); }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+p, a {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+/* Que Page */
+
+.que-page {
+    background-color: var(--white2);
+}
+
+
+/** Hero **/
+
+.que-page .hero {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.que-page .custom-shape-divider-bottom-1662291872 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    margin-bottom: -2px;
+}
+
+.que-page .custom-shape-divider-bottom-1662291872 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 153px;
+}
+
+.que-page .custom-shape-divider-bottom-1662291872 .shape-fill {
+    fill: var(--white2);
+}
+
+.que-page .hero .text h1 {
+    font-size: 70px;
+    font-family: 'VernerW00-Regular', serif !important;
+    font-weight: 700;
+    color: var(--red);
+}
+
+.que-page .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.que-page .content .block {
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
+    background-color: var(--white1);
+    color: black;
+    border: var(--gold) 1px solid;
+}
+
+.que-page .content .block > div {
+    display: flex;
+    justify-content: start;
+}
+
+.que-page .content .block div > p {
+    margin-right: 4px;
+}
+
+.que-page .content .block .que-green { color: var(--green); }
+.que-page .content .block .que-yellow { color: var(--yellow); }
+.que-page .content .block .que-orange { color: var(--orange); }
+.que-page .content .block .que-red { color: var(--red); }
