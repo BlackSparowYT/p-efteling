@@ -48,6 +48,8 @@
                 <?php
                 echo '<h2>Wachttijden in de efteling:</h2>';
                 
+                date_default_timezone_set("Europe/Amsterdam");
+
                 $date = date("m-d");
 
                 if ($date > strtotime("29-6") || $date < strtotime("5-9")) {
