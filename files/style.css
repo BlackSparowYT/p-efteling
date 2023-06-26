@@ -4,7 +4,7 @@
     --gold: #ede5d5;
     --red: #dd1616;
     --orange: #f09c00;
-    --yellow: #d3e200;
+    --yellow: #e0ca00;
 
     --black: #000;
     --white1: #ffffff;
@@ -80,35 +80,50 @@ p, a {
     color: var(--red);
 }
 
+
+
+/** Wachttijden **/
+
 .que-page .content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
     width: 80%;
     margin: 0 auto;
 }
 
-.que-page .content .block {
+.que-page .content h2 {
+    font-family: 'VernerW00-Regular', serif !important;
+    font-weight: 700;
+    color: var(--red);
+}
+
+.que-page .content .wachttijden {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 50px;
+}
+
+.que-page .content .wachttijden .block {
     margin-top: 10px;
     padding: 20px;
     border-radius: 10px;
     width: 20%;
+    min-width: 300px;
     background-color: var(--white1);
     color: black;
     border: var(--gold) 1px solid;
 }
 
-.que-page .content .block > div {
+.que-page .content .wachttijden .block > div {
     display: flex;
     justify-content: start;
 }
 
-.que-page .content .block div > p {
+.que-page .content .wachttijden .block div > p {
     margin-right: 4px;
 }
 
-.que-page .content .block .que-green { color: var(--green); }
-.que-page .content .block .que-yellow { color: var(--yellow); }
-.que-page .content .block .que-orange { color: var(--orange); }
-.que-page .content .block .que-red { color: var(--red); }
+.que-page .content .wachttijden .block .que-green { color: var(--green); }
+.que-page .content .wachttijden .block .que-yellow { color: var(--yellow); }
+.que-page .content .wachttijden .block .que-orange { color: var(--orange); }
+.que-page .content .wachttijden .block .que-red { color: var(--red); }

@@ -21,7 +21,7 @@
         <main class="que-page">
             <div class="hero">
                 <div class="text">
-                    <h1>Efteling Wachtijden</h1>
+                    <h1>Efteling Wachttijden</h1>
                 </div>
                 <div class="custom-shape-divider-bottom-1662291872">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -35,7 +35,7 @@
 
 
             <?php
-                $images = array('hero-2.jpg', 'hero-3.jpg', 'hero-5.jpg');
+                $images = array('hero-2.jpg', 'hero-3.jpg', 'hero-4.jpg');
 
                 $i = rand(0, count($images)-1);
                 $heroImage = $images[$i];
@@ -43,104 +43,64 @@
             <style>
                 .que-page .hero { <?php echo 'background-image: url(./files/images/'.$heroImage.');'; ?> }
             </style>
-
             <div class="content"> 
-
                 <?php
+                echo '<h2>Wachttijden in de efteling:</h2>';
+                
+                $date = date("m-d");
 
+                if ($date > strtotime("29-6") || $date < strtotime("5-9")) {
+                    echo '<p>Efteling is open van 9:00 tot 22:00.</p>';
+                } else {
+                    echo '<p>Efteling is open van 9:00 tot 18:00.</p>';
+                }
 
-                    if (true == false) {
-                        $curl = curl_init();
+                ?>
+                <div class="wachttijden">
+                    <?php
 
-                        curl_setopt_array($curl, [
-                            CURLOPT_URL => "https://unofficial-efteling-api.p.rapidapi.com/queue",
-                            CURLOPT_RETURNTRANSFER => true,
-                            CURLOPT_ENCODING => "",
-                            CURLOPT_MAXREDIRS => 10,
-                            CURLOPT_TIMEOUT => 30,
-                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                            CURLOPT_CUSTOMREQUEST => "GET",
-                            CURLOPT_HTTPHEADER => [
-                                "X-RapidAPI-Host: unofficial-efteling-api.p.rapidapi.com",
-                                "X-RapidAPI-Key: c270ff25bbmshfdb1e857975e48ap137282jsna1c2b008976b"
-                            ],
-                        ]);
-
-                        $response = curl_exec($curl);
-                        $err = curl_error($curl);
-    
-                        curl_close($curl);
-    
-                        if ($err) {
-                            echo "cURL Error #:" . $err;
-                        } else {
-    
-                            $dataArray = json_decode($response, true);
-    
-                            $myfile = fopen("./files/que.json", "w") or die("Unable to open file!");
-                            $txt = $response;
-                            fwrite($myfile, $txt);
-                            fclose($myfile);
-    
-                            foreach ($dataArray as $item) {
-                                $id = $item['id'];
-                                $wait = $item['wait'];
-                                $name = $item['name'];
+                        $json = file_get_contents('https://queue-times.com/nl/parks/160/queue_times.json');
+                        $dataArray = json_decode($json, true);
+                        $time = date("H:m");
+                        
+                        foreach ($dataArray['lands'] as $land) {
+                            foreach ($land['rides'] as $ride) {
+                                $id = $ride['id'];
+                                $wait = $ride['wait_time'];
+                                $name = $ride['name'];
+                                $open = $ride['is_open'];
                                 
                                 echo "
                                 <div class='block'>
-                                    <p>ID: $id</p> 
-                                    <p>Name: $name</p>
-                                    <p>Queue Length: ";
-                                    if ($wait != "-") {    
-                                        echo $wait;
-                                    } else {
-                                        echo "N.V.T.";
-                                    }
-                                    echo "</p>
-                                </div>";
+                                    <!--<p>Ride ID: $id</p>-->
+                                    <p>$name</p><p>
+                                    <div>";
+                                        if (($wait == "-" || $open == false) && ($time > "9:00" || $time < "18:00")) {
+                                            echo "<p>Wachtrij </p>";
+                                        } else if ($time > "9:00" || $time < "18:00") {
+                                            echo "<p>Wachtrij van </p>";
+                                        }
+
+                                        if (($wait == "-" || $open == false) && ($time > "9:00" || $time < "18:00")) {    
+                                            echo "<p class='que-red'>N.V.T.</p>";
+                                        } else if ($open == true && $wait > 10) {
+                                            echo "<p class='que-yellow'>".$wait." min</p>";
+                                        } else if ($open == true && $wait > 20) {
+                                            echo "<p class='que-orange'>".$wait." min</p>";
+                                        } else if ($open == true && $wait > 40) {
+                                            echo "<p class='que-red'>".$wait." min</p>";
+                                        } else if ($time < "9:00" || $time > "18:00") {
+                                            echo "<p class='que-red'>Gesloten</p>";
+                                        } else {
+                                            echo "<p class='que-green'>".$wait." min</p>";
+                                        }
+                                    echo "</div>";
+                                echo "</div>";
                             }
                         }
-                    }
 
-                    $json = file_get_contents('https://queue-times.com/nl/parks/160/queue_times.json');
-                    $dataArray = json_decode($json, true);
-                    
-                    foreach ($dataArray['lands'] as $land) {
-                        foreach ($land['rides'] as $ride) {
-                            $id = $ride['id'];
-                            $wait = $ride['wait_time'];
-                            $name = $ride['name'];
-                            $open = $ride['is_open'];
-                            
-                            echo "
-                            <div class='block'>
-                                <!--<p>ID: $id</p>-->
-                                <p>$name</p><p>
-                                <div>";
-                                    if ($wait == "-" || $open == false) {
-                                        echo "<p>Wachtrij </p>";
-                                    } else {
-                                        echo "<p>Wachtrij van </p>";
-                                    }
-
-                                    if ($wait == "-" || $open == false) {    
-                                        echo "<p class='que-red'>N.V.T.</p>";
-                                    } else if ($wait > 10) {
-                                        echo "<p class='que-yellow'>".$wait." min</p>";
-                                    } else if ($wait > 20) {
-                                        echo "<p class='que-orange'>".$wait." min</p>";
-                                    } else if ($wait > 40) {
-                                        echo "<p class='que-red'>".$wait." min</p>";
-                                    } else {
-                                        echo "<p class='que-green'>".$wait." min</p>";
-                                    }
-                            echo "</div>
-                            </div>";
-                        }
-                    }
-
-                ?>
+                    ?>
+                </div>
             </div>
         </main>
         
