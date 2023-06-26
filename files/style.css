@@ -112,7 +112,18 @@ p, a {
     background-color: var(--white1);
     color: black;
     border: var(--gold) 1px solid;
+    transition: all .3s;
 }
+
+.que-page .content .wachttijden .block:hover {
+    transform: scale(1.01);
+    transition: all .3s;
+}
+
+.que-page .content .wachttijden .block:hover:has(.que-green) { border: var(--green) 1px solid; }
+.que-page .content .wachttijden .block:hover:has(.que-yellow) { border: var(--yellow) 1px solid; }
+.que-page .content .wachttijden .block:hover:has(.que-orange) { border: var(--orange) 1px solid; }
+.que-page .content .wachttijden .block:hover:has(.que-red) { border: var(--red) 1px solid; }
 
 .que-page .content .wachttijden .block > div {
     display: flex;
@@ -121,6 +132,7 @@ p, a {
 
 .que-page .content .wachttijden .block div > p {
     margin-right: 4px;
+    transition: all .3s;
 }
 
 .que-page .content .wachttijden .block .que-green { color: var(--green); }
