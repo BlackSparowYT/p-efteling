@@ -53,10 +53,13 @@
                 $date = date("m-d");
 
                 if ($date > strtotime("29-6") || $date < strtotime("5-9")) {
-                    echo '<p>Efteling is open van 9:00 tot 22:00.</p>';
+                    $tijdOpen = "10:00";
+                    $tijdDicht = "22:00";
                 } else {
-                    echo '<p>Efteling is open van 9:00 tot 18:00.</p>';
+                    $tijdOpen = "10:00";
+                    $tijdDicht = "18:00";
                 }
+                echo '<p>Efteling is open van '.$tijdOpen.' tot '.$tijdDicht.'.</p>';
 
                 ?>
                 <div class="wachttijden">
@@ -67,44 +70,71 @@
                         $time = date("H:m");
                         
                         foreach ($dataArray['lands'] as $land) {
-                            foreach ($land['rides'] as $ride) {
-                                $id = $ride['id'];
-                                $wait = $ride['wait_time'];
-                                $name = $ride['name'];
-                                $open = $ride['is_open'];
-                                
-                                echo "
-                                <div class='block'>
-                                    <!--<p>Ride ID: $id</p>-->
-                                    <p>$name</p><p>
-                                    <div>";
-                                        if (($wait == "-" || $open == false) && ($time > "9:00" || $time < "18:00")) {
-                                            echo "<p>Wachtrij </p>";
-                                        } else if ($time > "9:00" || $time < "18:00") {
-                                            echo "<p>Wachtrij van </p>";
-                                        }
+                            if ($land['name'] != "Efteling Village Bosrijk") {
+                                echo '
+                                <button class="accordion">'.$land['name'].'</button>
+                                <div class="panel">';
+                                foreach ($land['rides'] as $ride) {
+                                    $id = $ride['id'];
+                                    $wait = $ride['wait_time'];
+                                    $name = $ride['name'];
+                                    $open = $ride['is_open'];
+                                    
+                                    echo "
+                                    <div class='block'>
+                                        <!--<p>Ride ID: $id</p>-->
+                                        <p>$name</p>
+                                        <div>";
+                                            if (($time > $tijdOpen || $time < $tijdDicht) && $open == true) {
+                                                echo "<p>Wachtrij van </p>";
+                                            }   else if ($time < "9:00" || $time > "18:00" || $open == false) {
+                                                echo "<p class='que-red'>Gesloten</p>";
+                                            }
 
-                                        if (($wait == "-" || $open == false) && ($time > "9:00" || $time < "18:00")) {    
-                                            echo "<p class='que-red'>N.V.T.</p>";
-                                        } else if ($open == true && $wait > 10) {
-                                            echo "<p class='que-yellow'>".$wait." min</p>";
-                                        } else if ($open == true && $wait > 20) {
-                                            echo "<p class='que-orange'>".$wait." min</p>";
-                                        } else if ($open == true && $wait > 40) {
-                                            echo "<p class='que-red'>".$wait." min</p>";
-                                        } else if ($time < "9:00" || $time > "18:00") {
-                                            echo "<p class='que-red'>Gesloten</p>";
-                                        } else {
-                                            echo "<p class='que-green'>".$wait." min</p>";
-                                        }
+                                            if ($wait == "-" && ($time > "9:00" || $time < "18:00")) {    
+                                                echo "<p class='que-green'>0 min</p>";
+                                            } else if ($open == true && $wait > 10) {
+                                                echo "<p class='que-yellow'>".$wait." min</p>";
+                                            } else if ($open == true && $wait > 20) {
+                                                echo "<p class='que-orange'>".$wait." min</p>";
+                                            } else if ($open == true && $wait > 40) {
+                                                echo "<p class='que-red'>".$wait." min</p>";
+                                            } else if ($open == false) {
+                                                echo "<p></p>";
+                                            } else {
+                                                echo "<p class='que-green'>".$wait." min</p>";
+                                            }
+                                            //echo $id.";".$wait.";".$name.";".$open.";";
+                                        echo "</div>";
                                     echo "</div>";
-                                echo "</div>";
+                                }
+                                echo '</div>';
                             }
                         }
 
                     ?>
                 </div>
             </div>
+            
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                        panel.style.borderColor = "var(--transparent)";
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                        panel.style.borderColor = "var(--gold)";
+                    } 
+                });
+                }
+            </script>
+
         </main>
         
         <footer>
